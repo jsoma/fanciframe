@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			font-family: Georgia, serif;
+			background: #F0FEFE;
+		}
+		code {
+			display: block;
+			margin-bottom: 10px;
+		}
+		
+		iframe {
+			height: 50px;
+			width: 700px;
+			background: #FEF0FE;
+		}
+		
+		iframe.fun-iframe {
+			border-bottom: solid maroon 13px;
+			border-top: solid crimson 13px;
+			border-left: solid crimson 13px;
+			border-right: solid maroon 23px;
+		}
+		
+		.content {
+			padding-left: 50px;
+		}
+	</style>
+	<script type="text/javascript" src="fanciframe.js"></script>
+	<script type="text/javascript">
+		// redirect to ?state=MI#sample if not currently there
+		if(window.location.href.indexOf('example.html?state=MI#sample') == -1) {
+			if(confirm("I'd like to redirect you! Is that okay?")) {
+				window.location.href = window.location.href.replace(/\?.*/,'') + "?state=MI#sample";
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>FanciFrame examples!</h1>
+	
+	<p>Let's embed iframes with grace and beauty</p>
+	
+	<div class="content">
+		
+		<h3>Take the anchor and pass it as an anchor (it's the default!)</h3>
+
+		<code>
+			FanciFrame.embed("embedded.html");
+		</code>
+	
+		<script type="text/javascript">
+			FanciFrame.embed("embedded.html");
+		</script>
+
+	
+		<h3>Take the anchor and pass it as an anchor</h3>
+
+		<code>
+			FanciFrame.embed("embedded.html", { input: 'anchor', output: 'anchor' } );
+		</code>
+	
+		<script type="text/javascript">
+			FanciFrame.embed("embedded.html", { input: 'anchor', output: 'anchor' } );
+		</script>
+
+
+
+	
+		<h3>Pass parameters to the iframe</h3>
+
+		<code>
+			FanciFrame.embed("embedded.html", { input: 'anchor', output: 'anchor' }, { 'class': 'fun-iframe', style: 'width: 600px' } );
+		</code>
+	
+		<script type="text/javascript">
+			FanciFrame.embed("embedded.html", { input: 'anchor', output: 'anchor' }, { 'class': 'fun-iframe', style: 'width: 600px' } );
+		</script>
+
+		<h3>Take the params and pass them as an anchor</h3>
+
+		<code>
+			FanciFrame.embed("embedded.html", { input: 'params', output: 'anchor' } );
+		</code>
+
+		<script type="text/javascript">
+			FanciFrame.embed("embedded.html", { input: 'params', output: 'anchor' } );
+		</script>
+
+
+
+
+		<h3>Take the params and pass them as params</h3>
+
+		<code>
+			FanciFrame.embed("embedded.html", { input: 'params', output: 'params' } );
+		</code>
+		<script type="text/javascript">
+			FanciFrame.embed("embedded.html", { input: 'params', output: 'params' } );
+		</script>
+
+
+
+
+		<h3>Take the params and pass them as params (appending to existing params)</h3>
+
+		<code>
+			FanciFrame.embed("embedded.html?test=true", { input: 'params', output: 'params' } );
+		</code>
+	
+		<script type="text/javascript">
+			FanciFrame.embed("embedded.html?test=true", { input: 'params', output: 'params' } );
+		</script>
+
+
+
+
+		<h3>Take the value of a specific parameter (state) and pass it as a specific parameter (selected)</h3>
+
+		<code>
+			FanciFrame.embed("embedded.html", { input: 'state', output: 'selected' } );
+		</code>
+	
+		<script type="text/javascript">
+			FanciFrame.embed("embedded.html", { input: 'state', output: 'selected' } );
+		</script>
+
+
+
+
+		<h3>Take the value of a specific parameter and pass it as an anchor</h3>
+
+		<code>
+			FanciFrame.embed("embedded.html", { input: 'state', output: 'anchor' } );
+		</code>
+	
+		<script type="text/javascript">
+			FanciFrame.embed("embedded.html", { input: 'state', output: 'anchor' } );
+		</script>
+
+
+
+
+		<h3>Take the value of a specific parameter and pass it as the same name</h3>
+
+		<code>
+			FanciFrame.embed("embedded.html", { input: 'state', output: 'params' } );
+		</code>
+	
+		<script type="text/javascript">
+			FanciFrame.embed("embedded.html", { input: 'state', output: 'params' } );
+		</script>
+
+
+
+
+		<h3>Take the value of a specific parameter and pass it as a hash</h3>
+
+		<code>
+			FanciFrame.embed("embedded.html", { input: 'state', output: 'anchor' } );
+		</code>
+	
+		<script type="text/javascript">
+			FanciFrame.embed("embedded.html", { input: 'state', output: 'anchor' } );
+		</script>
+
+	</div>
+	
+	<p>Find me <a href="http://www.github.com/jsoma/fanciframe">on github</a>.</p>
+</body>
